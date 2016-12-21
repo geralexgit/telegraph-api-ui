@@ -1,0 +1,32 @@
+<!--
+	https://api.telegra.ph/editPage/Sample-Page-12-15?access_token=b968da509bb76866c35425099bc0989a5ec3b32997d55286c657e6994bbb&title=Sample+Page&author_name=Anonymous&content=[{"tag":"p","children":["Hello,+world!"]}]&return_content=true
+-->
+<form action="">
+    <input type="text" name="path" title="Required. Path to the Telegraph page (in the format Title-12-31, i.e. everything that comes after http://telegra.ph/)." required>
+    <input type="checkbox" title="If true, content field will be returned in Page object.">
+    <button>Get page</button>
+</form>
+<!--Page
+	This object represents a page on Telegraph.
+
+	path (String)
+	Path to the page.
+	url (String)
+	URL of the page.
+	title (String)
+	Title of the page.
+	description (String)
+	Description of the page.
+	author_name (String)
+	Optional. Name of the author, displayed below the title.
+	author_url (String)
+	Optional. Profile link, opened when users click on the author's name below the title.  Can be any link, not necessarily to a Telegram profile or channel.
+	image_url (String)
+	Optional. Image URL of the page.
+	content (Array of Node)
+	Optional. Content of the page.
+	views (Integer)
+	Number of page views for the page.
+	can_edit (Boolean)
+	Optional. Only returned if access_token passed. True, if the target Telegraph account can edit the page.
+-->
