@@ -1,0 +1,20 @@
+<!--getViews
+Use this method to get the number of views for a Telegraph article. Returns a PageViews object on success. By default, the total number of page views will be returned.
+
+https://api.telegra.ph/getViews/Sample-Page-12-15?year=2016&month=12-->
+
+<form action="">
+
+	<input type="text" required name="path" placeholder="path" title="Required. Path to the Telegraph page (in the format Title-12-31, where 12 is the month and 31 the day the article was first published).">
+
+	<input type="Number" title="Required if month is passed. If passed, the number of page views for the requested year will be returned." placeholder="Year" value="" min="2000" max="2100">
+
+	<input type="number" title="" placeholder="Month" title="Required if day is passed. If passed, the number of page views for the requested month will be returned." max="12">
+
+	<input type="number" placeholder="day" max="24" title="Required if hour is passed. If passed, the number of page views for the requested day will be returned.">
+
+	<input type="number" placeholder="hour" type="number" max="24" title="If passed, the number of page views for the requested hour will be returned."> 
+
+	<button>Get Views</button>
+
+</form>
