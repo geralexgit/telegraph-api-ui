@@ -1,0 +1,28 @@
+{
+  "name": "Telegraph terminal",
+  "homepage": "https://github.com/geralexgit/telegraph-api-ui",
+  "authors": [
+    "geralexndr <notmylogin@gmail.com>"
+  ],
+  "description": "Telegram api user interface",
+  "main": "index.html",
+  "keywords": [
+    "telegram",
+    "terminal",
+    "durov",
+    "api",
+    "telegraph",
+    "api"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
