@@ -1,5 +1,5 @@
 {
-  "name": "Telegraph terminal",
+  "name": "terminal",
   "homepage": "https://github.com/geralexgit/telegraph-api-ui",
   "authors": [
     "geralexndr <notmylogin@gmail.com>"
@@ -23,6 +23,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.0"
   }
 }

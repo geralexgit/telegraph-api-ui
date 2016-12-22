@@ -1,0 +1,1 @@
+var terminalApp = angular.module('TerminalApp', []);
