@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Telegram terminal</title>
     <!-- Latest bootstrap compiled and minified CSS -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" crossorigin="anonymous">
     <!--Custom css
     <link rel="stylesheet" href="">-->
@@ -13,12 +14,74 @@
     <!--App scripts-->
     <script src="app/TerminalApp.js"></script>
     <script src="app/createUserForm/createUserController.js"></script>
-    <script src="app/createUserForm/createUserDirective.js"></script>
     <script src="app/createUserForm/createUserService.js"></script>
 </head>
 
 <body ng-controller="createUserController">
-    <create-user-form/>
+    <div class="container jumbotron hidden create-user" >
+        <form role="form" class="form-horizontal" action="https://api.telegra.ph/createAccount">
+            <fieldset>
+                <legend>Create User</legend>
+                <div class="form-group">
+                    <label for="short_name" class="col-sm-3 control-label">Username</label>
+                    <div class="col-sm-9">
+                        <input name="short_name" type="text" placeholder="Username" class="form-control" title="Required. Account name, helps users with several accounts remember which they are currently using. Displayed to the user above the Edit/Publish button on Telegra.ph, other users don't see this name." id="short_name" minlength="1" maxlength="32" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="author_name" class="col-sm-3 control-label">Author name</label>
+                    <div class="col-sm-9">
+                        <input type="text" data-toggle="tooltip" data-placement="top" class="form-control col-sm-9" id="author_name" placeholder="Default author name" title="Displayed to the user above the Edit/Publish button on Telegra.ph, other users don't see this name.">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="author_url" class="col-sm-3 control-label">Author's url (any link)</label>
+                    <div class="col-sm-9">
+                        <input class="form-control col-sm-9" type="text" name="author_url" placeholder="http://vk.com" title="Default profile link, opened when users click on the author's name below the title. Can be any link, not necessarily to a Telegram profile or channel." id="author_url" maxlength="512">
+                    </div>
+                </div>
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </fieldset>
+        </form>
+        <!--?short_name=Sandbox&author_name=Anonymous-->
+    </div>
+
+
+
+    <div class="container jumbotron hidden edit-user" >
+        <form role="form" class="form-horizontal" action="https://api.telegra.ph/createAccount">
+            <fieldset>
+                <legend>Edit User</legend>
+                <div class="form-group">
+                    <label for="short_name" class="col-sm-3 control-label">Username</label>
+                    <div class="col-sm-9">
+                        <input name="short_name" type="text" placeholder="Username" class="form-control" title="Required. Account name, helps users with several accounts remember which they are currently using. Displayed to the user above the Edit/Publish button on Telegra.ph, other users don't see this name." id="short_name" minlength="1" maxlength="32" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="author_name" class="col-sm-3 control-label">Author name</label>
+                    <div class="col-sm-9">
+                        <input type="text" data-toggle="tooltip" data-placement="top" class="form-control col-sm-9" id="author_name" placeholder="Default author name" title="Displayed to the user above the Edit/Publish button on Telegra.ph, other users don't see this name.">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="author_url" class="col-sm-3 control-label">Author's url (any link)</label>
+                    <div class="col-sm-9">
+                        <input class="form-control col-sm-9" type="text" name="author_url" placeholder="http://vk.com" title="Default profile link, opened when users click on the author's name below the title. Can be any link, not necessarily to a Telegram profile or channel." id="author_url" maxlength="512">
+                    </div>
+                </div>
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </fieldset>
+        </form>
+        <!--?short_name=Sandbox&author_name=Anonymous-->
+    </div>
+
+
+
 </body>
 
 </html>
