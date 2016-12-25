@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="">-->
     <!--Angular-->
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
     <!--App scripts-->
     <script src="app/TerminalApp.js"></script>
     <!--Controllers-->
@@ -28,22 +29,24 @@
 
 <body ng-controller="MainController">
 
+<div ng-view></div>
+
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Terminal</a>
+            <a class="navbar-brand" href="/">Terminal</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="#">New user</a></li>
-            <li class="active"><a href="#">Edit user info</a></li>
+            <li><a ng-click="createNewAccount()">New user</a></li>
+            <li><a ng-click="editAccount()">Edit user info</a></li>
         </ul>
     </div>
 </nav>
-
+<!--
 <create-account></create-account>
 
 <edit-account-info></edit-account-info>
-
+-->
 
 </body>
 
