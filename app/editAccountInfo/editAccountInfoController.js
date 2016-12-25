@@ -12,7 +12,10 @@ terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpPa
         author_name: $scope.author_name,
         author_url: $scope.author_url
     };
-
+    
+    $scope.textEdit = false;
+    
+    
     $scope.getAccountInfo = function(){
         console.log($scope.access_token);
     };

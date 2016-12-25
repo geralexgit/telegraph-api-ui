@@ -15,7 +15,8 @@
                             id="short_name"
                             minlength="1"
                             maxlength="32"
-                            required>
+                            required
+                            ng-disabled="!textEdit">
                 </div>
             </div>
             <div class="form-group">
@@ -27,7 +28,8 @@
                            data-placement="top"
                            class="form-control col-sm-9" id="author_name"
                            placeholder="Default author name"
-                           title="Displayed to the user above the Edit/Publish button on Telegra.ph, other users don't see this name.">
+                           title="Displayed to the user above the Edit/Publish button on Telegra.ph, other users don't see this name."
+                           ng-disabled="!textEdit">
                 </div>
             </div>
             <div class="form-group">
@@ -40,11 +42,14 @@
                            placeholder="http://vk.com"
                            title="Default profile link, opened when users click on the author's name below the title. Can be any link, not necessarily to a Telegram profile or channel."
                            id="author_url"
-                           maxlength="512">
+                           maxlength="512"
+                           ng-disabled="!textEdit"
+                    >
                 </div>
             </div>
             <div class="col-sm-offset-3 col-sm-9">
-                <button type="submit" class="btn btn-primary" ng-click="getAccountInfo()">Edit</button>
+                <button type="submit" ng-show="!textEdit" class="btn btn-primary" ng-click="textEdit = true">Edit</button>
+                <button type="submit" ng-show="textEdit" class="btn btn-primary" ng-click="textEdit = false; getAccountInfo()">Save</button>
             </div>
         </fieldset>
     </form>
