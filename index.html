@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="">-->
     <!--Angular-->
     <script src="bower_components/angular/angular.min.js"></script>
-    <!--Controllers-->
-    <script src="app/controllers/createUserController.js"></script>
     <!--App scripts-->
     <script src="app/TerminalApp.js"></script>
 </head>
@@ -72,7 +70,7 @@
     </form>
     <!--?short_name=Sandbox&author_name=Anonymous-->
     <pre>{{createUserData | json}}</pre>
-    {{message}}
+    {{createUserResponse | json}}
 
 </div>
 
