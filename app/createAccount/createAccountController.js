@@ -23,7 +23,11 @@ terminalApp.controller('createAccountController', ['$scope', '$http', '$httpPara
             if (response.data.ok === true) {
                 $scope.user = response.data.result;
                 $scope.access_token = $scope.user.access_token;
+                localStorage.setItem('short_name', JSON.stringify($scope.user.short_name));
+                localStorage.setItem('author_name', JSON.stringify($scope.user.author_name));
+                localStorage.setItem('author_url', JSON.stringify($scope.user.author_url));
                 localStorage.setItem('access_token', JSON.stringify($scope.user.access_token));
+                localStorage.setItem('auth_url', JSON.stringify($scope.user.auth_url));
             } else {
                 console.log('response.data.error');
             }

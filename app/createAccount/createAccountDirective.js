@@ -1,5 +1,6 @@
 terminalApp.directive('createAccount', function () {
     return {
-        templateUrl: 'app/createAccount/createAccountTemplate.html'
+        restrict: 'E',
+        templateUrl: '/app/createAccount/createAccountTemplate.html'
     };
 });

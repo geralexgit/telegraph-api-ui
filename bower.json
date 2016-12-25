@@ -4,15 +4,14 @@
   "authors": [
     "geralexndr <notmylogin@gmail.com>"
   ],
-  "description": "Telegram api user interface",
+  "description": "Telegraph api user interface",
   "main": "index.html",
   "keywords": [
     "telegram",
     "terminal",
     "durov",
     "api",
-    "telegraph",
-    "api"
+    "telegraph"
   ],
   "license": "MIT",
   "ignore": [
