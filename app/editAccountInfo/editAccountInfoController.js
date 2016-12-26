@@ -3,7 +3,7 @@ terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpPa
     $scope.textEdit = false;
 
     $scope.getAccountInfo = function () {
-        $scope.params = $httpParamSerializerJQLike($scope.getUserInfo);
+        $scope.params = $httpParamSerializerJQLike($scope.accountInfo);
         var settings = ['short_name', 'author_name', 'author_url'];
         $scope.accountInfo = {
             access_token: $scope.accountInfo.access_token,
@@ -20,7 +20,6 @@ terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpPa
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(function (response) {
-            console.log(response);
             if (response.data.ok === true) {
                 console.log('All ok!');
                 $scope.accountInfo = {
@@ -30,7 +29,7 @@ terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpPa
                     short_name: response.data.result.short_name
                 }
             } else {
-                console.log('Something went wrong');
+                console.warn('Something went wrong');
             }
         }, function (error) {
             console.log(error);
@@ -45,7 +44,6 @@ terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpPa
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(function (response) {
-            console.log(response);
             if (response.data.ok === true) {
                 console.log('All ok!');
                 console.log(response.data);
@@ -53,9 +51,13 @@ terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpPa
                     author_name: response.data.result.author_name,
                     author_url: response.data.result.author_url,
                     short_name: response.data.result.short_name
+
                 }
+                localStorage.setItem('short_name', JSON.stringify(response.data.result.short_name));
+                localStorage.setItem('author_name', JSON.stringify(response.data.result.author_name));
+                localStorage.setItem('author_url', JSON.stringify(response.data.result.author_url));
             } else {
-                console.log('Something went wrong');
+                console.warn('Something went wrong');
             }
         }, function (error) {
             console.log(error);
