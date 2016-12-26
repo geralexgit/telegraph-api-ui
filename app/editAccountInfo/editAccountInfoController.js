@@ -1,17 +1,25 @@
 terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpParamSerializerJQLike', function ($scope, $http, $httpParamSerializerJQLike) {
 
+    /*$scope.accountInfo = {
+        access_token: JSON.parse(localStorage.getItem('access_token')) || {},
+        short_name: JSON.parse(localStorage.getItem('short_name')),
+        author_name: JSON.parse(localStorage.getItem('author_name')),
+        author_url: JSON.parse(localStorage.getItem('author_url')),
+        auth_url: JSON.parse(localStorage.getItem('auth_url'))
+    };*/
+
     $scope.textEdit = false;
 
     $scope.getAccountInfo = function () {
         var settings = ['short_name', 'author_name', 'author_url'];
-        $scope.accountInfo = {
+        $scope.accountToGetInfo = {
             access_token: $scope.accountInfo.access_token,
             fields: JSON.stringify(settings)
         };
         $http({
             url: 'https://api.telegra.ph/getAccountInfo',
             method: 'POST',
-            data: $httpParamSerializerJQLike($scope.accountInfo),
+            data: $httpParamSerializerJQLike($scope.accountToGetInfo),
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
@@ -41,8 +49,7 @@ terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpPa
             }
         }).then(function (response) {
             if (response.data.ok === true) {
-                console.log('All ok!');
-                $scope.userInfo = {
+                $scope.accountToGetInfo = {
                     author_name: response.data.result.author_name,
                     author_url: response.data.result.author_url,
                     short_name: response.data.result.short_name
@@ -50,6 +57,8 @@ terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpPa
                 localStorage.setItem('short_name', JSON.stringify(response.data.result.short_name));
                 localStorage.setItem('author_name', JSON.stringify(response.data.result.author_name));
                 localStorage.setItem('author_url', JSON.stringify(response.data.result.author_url));
+
+                console.log('All ok!');
             } else {
                 console.warn('Something went wrong');
             }
