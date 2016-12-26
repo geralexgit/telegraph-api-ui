@@ -7,7 +7,7 @@
                 <label for="short_name" class="col-sm-3 control-label">Username</label>
                 <div class="col-sm-9">
                     <input
-                            ng-model="userInfo.short_name"
+                            ng-model="accountInfo.short_name"
                             type="text"
                             placeholder="Username"
                             class="form-control"
@@ -23,7 +23,7 @@
                 <label for="author_name" class="col-sm-3 control-label">Author name</label>
                 <div class="col-sm-9">
                     <input type="text"
-                           ng-model="userInfo.author_name"
+                           ng-model="accountInfo.author_name"
                            data-toggle="tooltip"
                            data-placement="top"
                            class="form-control col-sm-9" id="author_name"
@@ -36,7 +36,7 @@
                 <label for="author_url" class="col-sm-3 control-label">Author's url (any link)</label>
                 <div class="col-sm-9">
                     <input class="form-control col-sm-9"
-                           ng-model="userInfo.author_url"
+                           ng-model="accountInfo.author_url"
                            type="text"
                            name="author_url"
                            placeholder="http://vk.com"
@@ -53,5 +53,5 @@
             </div>
         </fieldset>
     </form>
-    <pre>{{userInfo | json}}</pre>
+    <pre>{{accountInfo | json}}</pre>
 </div>

@@ -8,7 +8,7 @@ terminalApp.controller('MainController', ['$scope', '$location', '$http', '$http
     $scope.author_name = JSON.parse(localStorage.getItem('author_name'));
     $scope.author_url = JSON.parse(localStorage.getItem('author_url'));
 
-    $scope.userInfo = {
+    $scope.accountInfo = {
         access_token: $scope.access_token,
         short_name: $scope.short_name,
         author_name: $scope.author_name,
