@@ -37,13 +37,10 @@ terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpPa
         });
     };
     $scope.editAccountInfo = function () {
-        $scope.accountInfo = {
-
-        };
         $http({
-            url: 'https://api.telegra.ph/getAccountInfo',
+            url: 'https://api.telegra.ph/editAccountInfo',
             method: 'POST',
-            data: $httpParamSerializerJQLike($scope.getUserInfo),
+            data: $httpParamSerializerJQLike($scope.accountInfo),
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
@@ -51,6 +48,7 @@ terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpPa
             console.log(response);
             if (response.data.ok === true) {
                 console.log('All ok!');
+                console.log(response.data);
                 $scope.userInfo = {
                     author_name: response.data.result.author_name,
                     author_url: response.data.result.author_url,
