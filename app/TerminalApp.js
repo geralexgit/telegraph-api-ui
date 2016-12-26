@@ -17,6 +17,10 @@ terminalApp.controller('MainController', ['$scope', '$location', '$http', '$http
         $location.path('/edit-account-info');
     };
 
+    $scope.revokeToken = function () {
+        $location.path('/revoke-access-token');
+    };
+
 }]);
 
 terminalApp.config(function ($routeProvider) {
@@ -28,6 +32,10 @@ terminalApp.config(function ($routeProvider) {
         .when('/edit-account-info', {
             templateUrl: 'app/editAccountInfo/editAccountInfoTemplate.html',
             controller: 'editAccountInfoController'
+        })
+        .when('/revoke-access-token', {
+            templateUrl: 'app/revokeAccessToken/revokeAccessTokenTemplate.html',
+            controller:  'revokeAccessTokenController'
         });
 });
 

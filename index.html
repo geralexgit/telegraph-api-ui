@@ -18,12 +18,15 @@
     <!--Controllers-->
     <script src="app/createAccount/createAccountController.js"></script>
     <script src="app/editAccountInfo/editAccountInfoController.js"></script>
+    <script src="app/revokeAccessToken/revokeAccessTokenController.js"></script>
     <!--Services-->
     <script src="app/createAccount/createAccountService.js"></script>
     <script src="app/editAccountInfo/editAccountInfoService.js"></script>
+    <script src="app/revokeAccessToken/revokeAccessTokenService.js"></script>
     <!--Directives-->
     <script src="app/createAccount/createAccountDirective.js"></script>
     <script src="app/editAccountInfo/editAccountInfoDirective.js"></script>
+    <script src="app/revokeAccessToken/revokeAccessTokenDirective.js"></script>
 
 </head>
 
@@ -39,14 +42,10 @@
         <ul class="nav navbar-nav">
             <li><a ng-click="createNewAccount()">New user</a></li>
             <li><a ng-click="editAccount()">Edit user info</a></li>
+            <li><a ng-click="revokeToken()">Revoke Token</a></li>
         </ul>
     </div>
 </nav>
-<!--
-<create-account></create-account>
-
-<edit-account-info></edit-account-info>
--->
 
 </body>
 
