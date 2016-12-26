@@ -46,7 +46,7 @@ terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpPa
                     author_name: response.data.result.author_name,
                     author_url: response.data.result.author_url,
                     short_name: response.data.result.short_name
-                }
+                };
                 localStorage.setItem('short_name', JSON.stringify(response.data.result.short_name));
                 localStorage.setItem('author_name', JSON.stringify(response.data.result.author_name));
                 localStorage.setItem('author_url', JSON.stringify(response.data.result.author_url));
