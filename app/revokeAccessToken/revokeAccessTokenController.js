@@ -1,20 +1,15 @@
 terminalApp.controller('revokeAccessTokenController', ['$scope', '$http', '$httpParamSerializerJQLike',
-    function ($http, $httpParamSerializerJQLike, $scope) {
-
+    function ($scope, $http, $httpParamSerializerJQLike) {
         $scope.accountInfo = {
             access_token: JSON.parse(localStorage.getItem('access_token')) || {},
-            short_name: JSON.parse(localStorage.getItem('short_name')),
-            author_name: JSON.parse(localStorage.getItem('author_name')),
-            author_url: JSON.parse(localStorage.getItem('author_url')),
-            auth_url: JSON.parse(localStorage.getItem('author_url'))//
+            auth_url: JSON.parse(localStorage.getItem('auth_url'))//
         };
-
         $scope.revokeAccessToken = function () {
             console.log('click!');
             $http({
                 url: 'https://api.telegra.ph/revokeAccessToken',
                 method: 'POST',
-                data: $httpParamSerializerJQLike($scope.accountInfo.access_token),
+                data: $httpParamSerializerJQLike($scope.accountInfo),
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
