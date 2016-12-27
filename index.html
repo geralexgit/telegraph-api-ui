@@ -15,22 +15,26 @@
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <!--App scripts-->
     <script src="app/TerminalApp.js"></script>
+    <!--Services-->
+    <script src="app/DataService.js"></script>
     <!--Controllers-->
     <script src="app/createAccount/createAccountController.js"></script>
     <script src="app/editAccountInfo/editAccountInfoController.js"></script>
     <script src="app/revokeAccessToken/revokeAccessTokenController.js"></script>
-    <!--Services-->
-    <script src="app/DataService.js"></script>
+    <script src="app/createPage/createPageController.js"></script>
     <!--Directives-->
     <script src="app/createAccount/createAccountDirective.js"></script>
     <script src="app/editAccountInfo/editAccountInfoDirective.js"></script>
     <script src="app/revokeAccessToken/revokeAccessTokenDirective.js"></script>
+    <script src="app/createPage/createPageDirective.js"></script>
 
 </head>
 
 <body ng-controller="MainController">
 
-<div ng-view></div>
+<div class="container">
+    <div ng-view></div>
+</div>
 
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container">
@@ -38,9 +42,10 @@
             <a class="navbar-brand" href="/">Terminal</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a ng-click="createNewAccount()">New user</a></li>
-            <li><a ng-click="editAccount()">Edit user info</a></li>
+            <li><a ng-click="createNewAccount()">New User</a></li>
+            <li><a ng-click="editAccount()">Edit User Info</a></li>
             <li><a ng-click="revokeToken()">Revoke Token</a></li>
+            <li><a ng-click="createNewPage()">Create Page</a></li>
         </ul>
     </div>
 </nav>

@@ -14,6 +14,10 @@ terminalApp.controller('MainController', ['$scope', '$location', '$http', '$http
         $location.path('/revoke-access-token');
     };
 
+    $scope.createNewPage = function () {
+        $location.path('/create-page');
+    };
+
 }]);
 
 terminalApp.config(function ($routeProvider) {
@@ -29,6 +33,10 @@ terminalApp.config(function ($routeProvider) {
         .when('/revoke-access-token', {
             templateUrl: 'app/revokeAccessToken/revokeAccessTokenTemplate.html',
             controller: 'revokeAccessTokenController'
+        })
+        .when('/create-page', {
+            templateUrl: 'app/createPage/createPageTemplate.html',
+            controller: 'createPageController'
         });
 });
 

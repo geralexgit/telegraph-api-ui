@@ -1,8 +1,19 @@
-<div class="container" ng-controller="revokeAccessTokenController">
-    <h3>Revoke access token</h3>
-    <form ng-submit="revokeAccessToken()">
-        <input type="text" ng-model="accountInfo.access_token" class="form-control" disabled>
-        <button type="submit" class="btn btn-primary">Revoke</button>
-    </form>
-    <pre>{{accountInfo | json}}</pre>
-</div>
+<form ng-submit="revokeAccessToken()" class="form-horizontal">
+
+    <legend>Revoke access token</legend>
+    <div class="form-group">
+        <label for="access_token" class="col-sm-3 control-label">Access token</label>
+        <div class="col-sm-6">
+            <input id="access_token" type="text" ng-model="accountInfo.access_token" class="form-control" disabled>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-6">
+            <button type="submit" class="btn btn-primary">Revoke</button>
+
+            <pre>{{accountInfo | json}}</pre>
+        </div>
+    </div>
+
+</form>
