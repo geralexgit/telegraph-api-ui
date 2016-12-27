@@ -45,12 +45,17 @@
                        maxlength="512">
             </div>
         </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-6">
+                <button type="submit" class="btn btn-primary">Create</button>
 
-        <div class="col-sm-offset-3 col-sm-6">
-            <button type="submit" class="btn btn-primary">Create</button>
-
-            <pre>{{createAccountData | json}}</pre>
-            <pre>{{accountInfo | json}}</pre>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-6">
+                <pre>{{createAccountData | json}}</pre>
+                <pre>{{accountInfo | json}}</pre>
+            </div>
         </div>
     </fieldset>
 </form>
