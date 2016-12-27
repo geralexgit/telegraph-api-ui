@@ -6,41 +6,46 @@
     <div class="form-group">
         <label for="title" class="col-sm-3 control-label">Title</label>
         <div class="col-sm-6">
-            <input id="title" type="text" class="form-control" name="title" placeholder="title"
+            <input id="title" ng-model="pageContent.title" type="text" class="form-control" name="title" placeholder="title"
                    title="Required. Page title." required>
         </div>
     </div>
     <div class="form-group">
         <label for="author_name" class="col-sm-3 control-label">Author Name</label>
         <div class="col-sm-6">
-            <input id="author_name" type="text" class="form-control" name="author_name" placeholder="Author name"
-                   title="Author name, displayed below the article's title.">
+            <input id="author_name" ng-model="pageContent.author_name" type="text" class="form-control" name="author_name" placeholder="Author name"
+                   title="Author name, displayed below the article's title." disabled>
         </div>
     </div>
     <div class="form-group">
         <label for="author_url" class="col-sm-3 control-label">Author Url</label>
         <div class="col-sm-6">
-            <input id="author_url" class="form-control" type="text" name="author_url" placeholder="Profile link"
-                   title="Profile link, opened when users click on the author's name below the title. Can be any link, not necessarily to a Telegram profile or channel.">
+            <input id="author_url" ng-model="pageContent.author_url" class="form-control" type="text" name="author_url" placeholder="Profile link"
+                   title="Profile link, opened when users click on the author's name below the title. Can be any link, not necessarily to a Telegram profile or channel." disabled>
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-3 control-label" for="content">Main content</label>
         <div class="col-sm-6">
             <!--[{"tag":"p","children":["Hello,+world!"]}]-->
-            <textarea id="content" class="form-control" name="content" id="" cols="30" rows="10"
+            <textarea id="content" ng-model="pageText" class="form-control" placeholder="Required. Content of the page." name="content" id="" cols="30" rows="10"
                       title="Required. Content of the page." required></textarea>
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-offset-3 col-sm-6">
-            <input id="return_content" type="checkbox" title="Return content">
+            <input id="return_content" ng-model="pageContent.return_content" type="checkbox" title="Return content">
             <label for="return_content">Return content</label>
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-offset-3 col-sm-6">
             <button class="btn btn-primary">Create new page</button>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-6">
+            <pre>{{pageContent | json}}</pre>
         </div>
     </div>
 </form>
