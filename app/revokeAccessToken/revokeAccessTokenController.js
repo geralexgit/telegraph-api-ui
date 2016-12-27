@@ -1,8 +1,8 @@
-terminalApp.controller('revokeAccessTokenController', ['$scope', '$http', '$httpParamSerializerJQLike',
-    function ($scope, $http, $httpParamSerializerJQLike) {
+terminalApp.controller('revokeAccessTokenController', ['$scope', '$http', '$httpParamSerializerJQLike', 'DataService',
+    function ($scope, $http, $httpParamSerializerJQLike, DataService) {
         $scope.accountInfo = {
-            access_token: JSON.parse(localStorage.getItem('access_token')) || {},
-            auth_url: JSON.parse(localStorage.getItem('auth_url'))//
+            access_token: DataService.accountInfo.access_token,
+            auth_url: DataService.accountInfo.auth_url
         };
         $scope.revokeAccessToken = function () {
             console.log('click!');

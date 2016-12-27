@@ -1,12 +1,6 @@
-terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpParamSerializerJQLike', function ($scope, $http, $httpParamSerializerJQLike) {
+terminalApp.controller('editAccountInfoController', ['$scope', '$http', '$httpParamSerializerJQLike','DataService', function ($scope, $http, $httpParamSerializerJQLike, DataService) {
 
-    /*$scope.accountInfo = {
-        access_token: JSON.parse(localStorage.getItem('access_token')) || {},
-        short_name: JSON.parse(localStorage.getItem('short_name')),
-        author_name: JSON.parse(localStorage.getItem('author_name')),
-        author_url: JSON.parse(localStorage.getItem('author_url')),
-        auth_url: JSON.parse(localStorage.getItem('auth_url'))
-    };*/
+    $scope.accountInfo = DataService.accountInfo;
 
     $scope.textEdit = false;
 

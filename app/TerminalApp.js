@@ -1,14 +1,6 @@
 var terminalApp = angular.module('TerminalApp', ['ngRoute']);
 
-terminalApp.controller('MainController', ['$scope', '$location', '$http', '$httpParamSerializerJQLike', function ($scope, $location, $http, $httpParamSerializerJQLike) {
-
-    $scope.accountInfo = {
-        access_token: JSON.parse(localStorage.getItem('access_token')) || {},
-        short_name: JSON.parse(localStorage.getItem('short_name')),
-        author_name: JSON.parse(localStorage.getItem('author_name')),
-        author_url: JSON.parse(localStorage.getItem('author_url')),
-        auth_url: JSON.parse(localStorage.getItem('auth_url'))
-    };
+terminalApp.controller('MainController', ['$scope', '$location', '$http', '$httpParamSerializerJQLike', 'DataService', function ($scope, $location, $http, $httpParamSerializerJQLike, DataService) {
 
     $scope.createNewAccount = function () {
         $location.path('/create-account');
@@ -36,7 +28,7 @@ terminalApp.config(function ($routeProvider) {
         })
         .when('/revoke-access-token', {
             templateUrl: 'app/revokeAccessToken/revokeAccessTokenTemplate.html',
-            controller:  'revokeAccessTokenController'
+            controller: 'revokeAccessTokenController'
         });
 });
 
