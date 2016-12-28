@@ -1,6 +1,6 @@
 <!--access-token required-->
 <!--https://api.telegra.ph/createPage?access_token=b968da509bb76866c35425099bc0989a5ec3b32997d55286c657e6994bbb&title=Sample+Page&author_name=Anonymous&content=[{"tag":"p","children":["Hello,+world!"]}]&return_content=true-->
-<form class="form-horizontal">
+<form class="form-horizontal" ng-submit="createPage()">
     <legend>Create new page</legend>
     <!--<input type="text" name="token" placeholder="token" title="Required. Access token of the Telegraph account." required>-->
     <div class="form-group">
@@ -45,7 +45,22 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-3 col-sm-6">
-            <pre>{{pageContent | json}}</pre>
+            account info
+            <pre>{{accountInfo | json}}</pre>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-6">
+            data
+            <pre>{{data | json}}</pre>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-6">
+            response
+            <pre>{{response | json}}</pre>
         </div>
     </div>
 </form>
