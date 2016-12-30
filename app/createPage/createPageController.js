@@ -10,26 +10,10 @@ terminalApp.controller('createPageController', ['$scope', '$http', '$httpParamSe
         $scope.pageContent = {};
 
         $scope.$watch('pageText', function (value) {
-            $scope.pageContent.content = [{"tag": "p", "children": value}];
+            $scope.pageContent.content = [{"tag": "p", "children": JSON.toString([value])}];
         });
 
-        /*$scope.createPage = function () {
-
-
-         $http.post(url, {params: data}).then(function (response) {
-         if (response.data.ok === true) {
-         console.log('Everything is fine');
-         console.log(response.data.result);
-         $scope.response = response.data.result;
-         } else {
-         console.log('Something went wrong');
-         }
-         })
-         }*/
-
-
         $scope.createPage = function () {
-
             $scope.data = {
                 access_token: $scope.accountInfo.access_token,
                 title: $scope.pageContent.title,
@@ -38,7 +22,6 @@ terminalApp.controller('createPageController', ['$scope', '$http', '$httpParamSe
                 content: $scope.pageContent.content,
                 return_content: $scope.pageContent.return_content
             };
-
             $http({
                 url: url,
                 method: 'POST',
@@ -58,10 +41,21 @@ terminalApp.controller('createPageController', ['$scope', '$http', '$httpParamSe
                 }
             });
         };
-
     }]);
 
+/*$scope.createPage = function () {
 
+
+ $http.post(url, {params: data}).then(function (response) {
+ if (response.data.ok === true) {
+ console.log('Everything is fine');
+ console.log(response.data.result);
+ $scope.response = response.data.result;
+ } else {
+ console.log('Something went wrong');
+ }
+ })
+ }*/
 /*
  */
 

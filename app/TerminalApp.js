@@ -18,6 +18,10 @@ terminalApp.controller('MainController', ['$scope', '$location', '$http', '$http
         $location.path('/create-page');
     };
 
+    $scope.getListOfPages = function () {
+        $location.path('/get-page-list');
+    };
+
 }]);
 
 terminalApp.config(function ($routeProvider) {
@@ -37,6 +41,10 @@ terminalApp.config(function ($routeProvider) {
         .when('/create-page', {
             templateUrl: 'app/createPage/createPageTemplate.html',
             controller: 'createPageController'
+        })
+        .when('/get-page-list', {
+            templateUrl: 'app/getPageList/getPageListTemplate.html',
+            controller: 'getPageListController'
         });
 });
 
