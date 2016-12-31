@@ -48,3 +48,15 @@
         </div>
     </div>
 </form>
+<div class="pages jumbotron">
+    <div class="pre" ng-repeat="page in pages">
+        <p>Path: <span><strong>{{page.path}}</strong></span></p>
+        <p>Url: <span><strong>{{page.url}}</strong></span></p>
+        <p>Title: <span><strong>{{page.title}}</strong></span></p>
+        <p>Description: <span><strong>{{page.description}}</strong></span></p>
+        <p>Views: <span><strong>{{page.author_name}}</strong></span></p>
+        <p>Editable: <span><strong>{{page.can_edit}}</strong></span></p>
+        <br>
+        <br>
+    </div>
+</div>

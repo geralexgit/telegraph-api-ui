@@ -35,7 +35,6 @@ terminalApp.controller('createPageController', ['$scope', '$http', '$httpParamSe
                     console.log(response.data.result);
                     $scope.response = response.data.result;
                 } else {
-
                     console.log('Something went wrong');
                     console.log(response);
                 }
